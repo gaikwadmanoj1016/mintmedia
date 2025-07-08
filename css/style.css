@@ -1,0 +1,105 @@
+:root {
+    --primary-blue: #2563eb; /* Tailwind's blue-600 */
+    --hover-blue: #1d4ed8;   /* Tailwind's blue-700 */
+    --light-gray: #f3f4f6;  /* Tailwind's gray-100 */
+    --dark-gray: #111827;   /* Tailwind's gray-900 */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+}
+
+.section-padding-lg {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+    .section-padding-lg {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+@media (min-width: 1024px) {
+    .section-padding-lg {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--primary-blue);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px; /* Fully rounded */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+.btn-primary:hover {
+    background-color: var(--hover-blue);
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    display: inline-block;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px; /* Fully rounded */
+    transition: all 0.3s ease-in-out;
+}
+.btn-secondary:hover {
+    background: white;
+    color: var(--primary-blue);
+    transform: scale(1.05);
+}
+
+/* Replaced card-shadow with Tailwind's shadow-md and hover:shadow-lg directly in HTML for simplicity */
+/* .card-shadow {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+                0 4px 6px -2px rgba(0, 0, 0, 0.05);
+} */
+
+/* Animations for Hero section */
+@keyframes fadeInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInFromBottom 0.8s ease-out forwards;
+}
+
+.animate-fade-in-up.delay-200 {
+    animation-delay: 0.2s;
+}
+
+.animate-fade-in-up.delay-400 {
+    animation-delay: 0.4s;
+}
+
+/* Add this to your css/style.css */
+
+#common-header {
+    position: sticky; /* Makes the element sticky */
+    top: 0;           /* Sticks it to the very top of the viewport */
+    width: 100%;      /* Ensures it spans the full width */
+    z-index: 1000;    /* Keeps it above other content */
+    /* Optional: Add a background color if your header content doesn't have one */
+    background-color: white; /* Example: adjust to your header's background */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Optional: Adds a subtle shadow */
+}

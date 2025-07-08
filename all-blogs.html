@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Blog Posts - DigitalEdge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Custom shadow for cards */
+        .card-shadow {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-900 antialiased">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold text-blue-700 tracking-wide">DigitalEdge.</a>
+            <ul class="hidden md:flex space-x-10">
+                <li><a href="index.html#home" class="text-gray-700 hover:text-blue-600 transition duration-300">Home</a>
+                </li>
+                <li><a href="index.html#services"
+                        class="text-gray-700 hover:text-blue-600 transition duration-300">Services</a></li>
+                <li><a href="index.html#portfolio"
+                        class="text-gray-700 hover:text-blue-600 transition duration-300">Portfolio</a></li>
+                <li><a href="index.html#blog" class="text-gray-700 hover:text-blue-600 transition duration-300">Blog</a>
+                </li>
+                <li><a href="index.html#about"
+                        class="text-gray-700 hover:text-blue-600 transition duration-300">About</a></li>
+                <li><a href="index.html#contact"
+                        class="text-gray-700 hover:text-blue-600 transition duration-300">Contact</a></li>
+            </ul>
+            <button class="md:hidden text-gray-700 focus:outline-none focus:text-blue-600">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="bg-gradient-to-r from-blue-700 to-blue-500 py-20 text-white text-center">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 class="text-5xl font-extrabold mb-4 animate-fade-in-up">Our Latest Insights</h1>
+                <p class="text-xl opacity-90 max-w-2xl mx-auto animate-fade-in-up delay-200">
+                    Dive into our comprehensive articles on digital marketing, social media trends, content strategy,
+                    and more.
+                </p>
+            </div>
+        </section>
+
+        <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-100">
+            <div class="container mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">All Blog Posts</h2>
+                <div id="all-blogs" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <p class="col-span-1 md:col-span-2 lg:col-span-3 text-center text-gray-500">Loading blog posts...
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="common-footer"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("assets/data/blogs.json")
+                .then((res) => {
+                    if (!res.ok) {
+                        throw new Error(`HTTP error! status: ${res.status}`);
+                    }
+                    return res.json();
+                })
+                .then((blogs) => {
+                    const container = document.getElementById("all-blogs");
+                    if (!container) return;
+
+                    // Clear loading message
+                    container.innerHTML = "";
+
+                    if (blogs.length === 0) {
+                        container.innerHTML = '<p class="col-span-1 md:col-span-2 lg:col-span-3 text-center text-gray-500">No blog posts found.</p>';
+                        return;
+                    }
+
+                    blogs.forEach((blog) => {
+                        const card = document.createElement("div");
+                        card.className =
+                            "bg-white rounded-xl card-shadow overflow-hidden transition-transform transform hover:scale-105 duration-300 ease-in-out";
+                        card.innerHTML = `
+                            <img src="${blog.image}" alt="${blog.title}" class="w-full h-48 object-cover">
+                            <div class="p-6 text-left">
+                                <h3 class="text-xl font-semibold text-gray-900 mb-2">${blog.title}</h3>
+                                <p class="text-gray-600 text-sm mb-4">${blog.description}</p>
+                                <a href="blog.html?id=${blog.id}" class="text-blue-600 hover:text-blue-800 font-medium text-sm inline-flex items-center">
+                                    Read More
+                                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                                </a>
+                            </div>
+                        `;
+                        container.appendChild(card);
+                    });
+                })
+                .catch((error) => {
+                    console.error("Error loading blogs:", error);
+                    document.getElementById("all-blogs").innerHTML = '<p class="col-span-1 md:col-span-2 lg:col-span-3 text-center text-red-500">Failed to load blog posts. Please try again later.</p>';
+                });
+            fetch("footer.html")
+                .then((res) => res.text())
+                .then((html) => {
+                    document.getElementById("common-footer").innerHTML = html;
+                });
+        });
+    </script>
+
+</body>
+
+</html>
