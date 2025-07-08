@@ -16,10 +16,14 @@
         /* Styles for the alternating sections (reused from services.html logic) */
         .about-detail-section {
             @apply flex flex-col md:flex-row items-center justify-between gap-12 mb-20;
-            background-color: #ffffff; /* White background for each section */
-            border-radius: 0.75rem; /* rounded-xl */
-            padding: 2.5rem; /* p-10 (approx) */
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* shadow-md */
+            background-color: #ffffff;
+            /* White background for each section */
+            border-radius: 0.75rem;
+            /* rounded-xl */
+            padding: 2.5rem;
+            /* p-10 (approx) */
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            /* shadow-md */
         }
 
         /* Automatically reverse layout for every second section on medium screens and up */
@@ -30,31 +34,17 @@
         /* Ensure images in content sections fill their space */
         .content-image {
             @apply w-full h-auto rounded-lg shadow-lg object-cover;
-            min-height: 250px; /* Ensure images have a minimum height */
-            max-height: 400px; /* Optional: Limit max height */
+            min-height: 250px;
+            /* Ensure images have a minimum height */
+            max-height: 400px;
+            /* Optional: Limit max height */
         }
     </style>
 </head>
 
 <body class="bg-gray-100 text-gray-900 antialiased">
 
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-3xl font-bold text-blue-700 tracking-wide">DigitalEdge.</a>
-            <ul class="hidden md:flex space-x-10">
-                <li><a href="index.html#home" class="text-gray-700 hover:text-blue-600 transition duration-300">Home</a></li>
-                <li><a href="index.html#services" class="text-gray-700 hover:text-blue-600 transition duration-300">Services</a></li>
-                <li><a href="index.html#portfolio" class="text-gray-700 hover:text-blue-600 transition duration-300">Portfolio</a></li>
-                <li><a href="index.html#blog" class="text-gray-700 hover:text-blue-600 transition duration-300">Blog</a></li>
-                <li><a href="about.html" class="text-blue-600 font-semibold transition duration-300">About</a></li> <li><a href="index.html#contact" class="text-gray-700 hover:text-blue-600 transition duration-300">Contact</a></li>
-            </ul>
-            <button class="md:hidden text-gray-700 focus:outline-none focus:text-blue-600">
-                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                </svg>
-            </button>
-        </nav>
-    </header>
+    <div id="common-header"></div>
 
     <main>
         <section class="bg-gradient-to-r from-blue-700 to-purple-700 py-20 text-white text-center">
@@ -71,63 +61,85 @@
 
                 <div class="flex flex-col md:flex-row items-center justify-between gap-12 mb-20">
                     <div class="md:w-1/2">
-                        <img src="https://placehold.co/600x400/93C5FD/ffffff?text=Our+Team" alt="DigitalEdge Team" class="content-image">
+                        <img src="https://placehold.co/600x400/93C5FD/ffffff?text=Our+Team" alt="DigitalEdge Team"
+                            class="content-image">
                     </div>
                     <div class="md:w-1/2 text-center md:text-left">
                         <h2 class="text-3xl font-semibold text-gray-900 mb-4">Who We Are</h2>
                         <p class="text-gray-700 leading-relaxed text-lg mb-4">
-                            At **DigitalEdge Marketing**, we are a collective of passionate digital strategists, creative content creators, and data-driven analysts. We're united by a common goal: to empower businesses like yours to thrive in the ever-evolving social media landscape. Our diverse expertise allows us to craft tailored solutions that resonate with your audience and deliver tangible results.
+                            At **DigitalEdge Marketing**, we are a collective of passionate digital strategists,
+                            creative content creators, and data-driven analysts. We're united by a common goal: to
+                            empower businesses like yours to thrive in the ever-evolving social media landscape. Our
+                            diverse expertise allows us to craft tailored solutions that resonate with your audience and
+                            deliver tangible results.
                         </p>
                         <p class="text-gray-700 leading-relaxed text-lg">
-                            Since our inception in 2018, we've partnered with businesses across various industries, helping them build strong, engaging online presences. We believe in transparency, continuous learning, and fostering strong relationships with our clients.
+                            Since our inception in 2018, we've partnered with businesses across various industries,
+                            helping them build strong, engaging online presences. We believe in transparency, continuous
+                            learning, and fostering strong relationships with our clients.
                         </p>
                     </div>
                 </div>
 
                 <div class="flex flex-col md:flex-row-reverse items-center justify-between gap-12 mb-20">
                     <div class="md:w-1/2">
-                        <img src="https://placehold.co/600x400/BFDBFE/000000?text=Our+Process" alt="How DigitalEdge Works" class="content-image">
+                        <img src="https://placehold.co/600x400/BFDBFE/000000?text=Our+Process"
+                            alt="How DigitalEdge Works" class="content-image">
                     </div>
                     <div class="md:w-1/2 text-center md:text-right">
                         <h2 class="text-3xl font-semibold text-gray-900 mb-4">How We Work</h2>
                         <p class="text-gray-700 leading-relaxed text-lg mb-4">
-                            Our process is collaborative, data-driven, and designed for maximum impact. We start by deeply understanding your brand, market, and objectives. From there, we move into strategy development, content creation, precise execution, and rigorous performance analysis.
+                            Our process is collaborative, data-driven, and designed for maximum impact. We start by
+                            deeply understanding your brand, market, and objectives. From there, we move into strategy
+                            development, content creation, precise execution, and rigorous performance analysis.
                         </p>
                         <ul class="list-disc list-inside text-gray-600 text-left md:text-right">
                             <li>**Discovery & Strategy:** In-depth analysis to build a custom roadmap.</li>
                             <li>**Content & Creative:** Crafting compelling visuals and narratives.</li>
                             <li>**Execution & Management:** Implementing campaigns and engaging your audience.</li>
-                            <li>**Analysis & Optimization:** Continuous monitoring and refinement for peak performance.</li>
+                            <li>**Analysis & Optimization:** Continuous monitoring and refinement for peak performance.
+                            </li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="flex flex-col md:flex-row items-center justify-between gap-12 mb-20">
                     <div class="md:w-1/2">
-                        <img src="https://placehold.co/600x400/BFB2FA/ffffff?text=Vision+Mission" alt="DigitalEdge Vision and Mission" class="content-image">
+                        <img src="https://placehold.co/600x400/BFB2FA/ffffff?text=Vision+Mission"
+                            alt="DigitalEdge Vision and Mission" class="content-image">
                     </div>
                     <div class="md:w-1/2 text-center md:text-left">
                         <h2 class="text-3xl font-semibold text-gray-900 mb-4">Our Vision & Mission</h2>
                         <p class="text-gray-700 leading-relaxed text-lg mb-4">
-                            **Our Vision:** To be the leading force in social media marketing, recognized for innovation, integrity, and consistently delivering exceptional results that empower brands to achieve their fullest online potential.
+                            **Our Vision:** To be the leading force in social media marketing, recognized for
+                            innovation, integrity, and consistently delivering exceptional results that empower brands
+                            to achieve their fullest online potential.
                         </p>
                         <p class="text-gray-700 leading-relaxed text-lg">
-                            **Our Mission:** To provide strategic, results-oriented social media marketing solutions that build authentic connections, drive measurable growth, and foster enduring brand loyalty for our clients worldwide.
+                            **Our Mission:** To provide strategic, results-oriented social media marketing solutions
+                            that build authentic connections, drive measurable growth, and foster enduring brand loyalty
+                            for our clients worldwide.
                         </p>
                     </div>
                 </div>
 
                 <div class="flex flex-col md:flex-row-reverse items-center justify-between gap-12 mb-20">
                     <div class="md:w-1/2">
-                        <img src="https://placehold.co/600x400/A0DAFB/000000?text=Future+Growth" alt="Future Plans for DigitalEdge" class="content-image">
+                        <img src="https://placehold.co/600x400/A0DAFB/000000?text=Future+Growth"
+                            alt="Future Plans for DigitalEdge" class="content-image">
                     </div>
                     <div class="md:w-1/2 text-center md:text-right">
                         <h2 class="text-3xl font-semibold text-gray-900 mb-4">Our Future Plans</h2>
                         <p class="text-gray-700 leading-relaxed text-lg mb-4">
-                            The digital landscape is always changing, and so are we. We're constantly exploring emerging platforms, new technologies like AI in content creation and analytics, and advanced strategies to keep our clients ahead of the curve. Our future involves expanding our global reach, diversifying our service offerings to include more niche marketing solutions, and investing heavily in cutting-edge research and development.
+                            The digital landscape is always changing, and so are we. We're constantly exploring emerging
+                            platforms, new technologies like AI in content creation and analytics, and advanced
+                            strategies to keep our clients ahead of the curve. Our future involves expanding our global
+                            reach, diversifying our service offerings to include more niche marketing solutions, and
+                            investing heavily in cutting-edge research and development.
                         </p>
                         <p class="text-gray-700 leading-relaxed text-lg">
-                            We aim to not just keep up with trends, but to set them, ensuring DigitalEdge remains at the forefront of digital marketing innovation.
+                            We aim to not just keep up with trends, but to set them, ensuring DigitalEdge remains at the
+                            forefront of digital marketing innovation.
                         </p>
                     </div>
                 </div>
@@ -138,25 +150,25 @@
                 </div>
             </div>
         </section>
+        <div id="common-footer"></div>
+
     </main>
 
-    <footer class="bg-gray-800 text-white py-10 mt-16">
-        <div class="container mx-auto text-center px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center mb-6">
-                <div class="mb-4 md:mb-0">
-                    <h4 class="text-2xl font-bold text-blue-300">DigitalEdge.</h4>
-                    <p class="text-gray-400 text-sm mt-2">Your partner in digital growth.</p>
-                </div>
-                <div class="flex flex-wrap justify-center space-x-6">
-                    <a href="#" class="text-gray-400 hover:text-white transition duration-200">Privacy Policy</a>
-                    <a href="#" class="text-gray-400 hover:text-white transition duration-200">Terms of Service</a>
-                    <a href="index.html#contact" class="text-gray-400 hover:text-white transition duration-200">Contact Us</a>
-                </div>
-            </div>
-            <p class="text-gray-500 text-sm">&copy; 2025 Digital Edge Marketing. All rights reserved.</p>
-        </div>
-    </footer>
+    <script>
+        // Load common header
+        fetch("header.html")
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById("common-header").innerHTML = html;
+            })
+            .catch(error => console.error("Failed to load header:", error));
 
+        fetch("footer.html")
+            .then((res) => res.text())
+            .then((html) => {
+                document.getElementById("common-footer").innerHTML = html;
+            });
+    </script>
 </body>
 
 </html>
