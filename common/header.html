@@ -1,0 +1,50 @@
+<header class="bg-white shadow-md sticky top-0 z-50">
+  <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+    <a href="index.html" class="text-3xl font-bold text-blue-700 tracking-wide">
+      MINT MEDIA
+    </a>
+
+    <!-- Hamburger Button -->
+    <div class="md:hidden">
+      <button id="mobile-menu-button" class="text-gray-600 hover:text-blue-600 focus:outline-none">
+        <svg id="hamburger-icon" class="h-8 w-8 transition-transform duration-300 ease-in-out" fill="none"
+          stroke="currentColor" viewBox="0 0 24 24">
+          <path id="line1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16" />
+          <path id="line2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12h16" />
+          <path id="line3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Desktop Menu -->
+    <ul class="hidden md:flex space-x-10">
+      <li><a href="/index.html#home" class="text-gray-700 hover:text-blue-600 font-medium text-lg">Home</a></li>
+      <li><a href="/index.html#services" class="text-gray-700 hover:text-blue-600 font-medium text-lg">Services</a></li>
+      <li><a href="/index.html#blog" class="text-gray-700 hover:text-blue-600 font-medium text-lg">Blog</a></li>
+      <li><a href="/index.html#about" class="text-gray-700 hover:text-blue-600 font-medium text-lg">About</a></li>
+      <li><a href="/index.html#contact" class="text-gray-700 hover:text-blue-600 font-medium text-lg">Contact</a></li>
+    </ul>
+  </nav>
+  <!-- Mobile Menu (hidden by default) -->
+  <div id="mobile-menu" class="md:hidden overflow-hidden transition-[max-height] duration-300 ease-in-out max-h-0">
+    <ul class="flex flex-col items-end space-y-4 py-4">
+      <li class="self-end px-10">
+        <a href="/index.html#home" class="text-gray-700 hover:text-blue-600 font-medium text-lg">Home</a>
+      </li>
+      <li class="self-end px-10">
+        <a href="/index.html#services" class="text-gray-700 hover:text-blue-600 font-medium text-lg">Services</a>
+      </li>
+      <li class="self-end px-10">
+        <a href="/index.html#blog" class="text-gray-700 hover:text-blue-600 font-medium text-lg">Blog</a>
+      </li>
+      <li class="self-end px-10">
+        <a href="/index.html#about" class="text-gray-700 hover:text-blue-600 font-medium text-lg">About</a>
+      </li>
+      <li class="self-end px-10">
+        <a href="/index.html#contact" class="text-gray-700 hover:text-blue-600 font-medium text-lg">Contact</a>
+      </li>
+    </ul>
+
+  </div>
+
+</header>

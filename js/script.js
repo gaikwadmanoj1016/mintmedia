@@ -1,29 +1,32 @@
 // Load common header
-fetch("header.html")
+fetch("/common/header.html")
     .then(res => res.text())
     .then(html => {
         document.getElementById("common-header").innerHTML = html;
     })
     .catch(error => console.error("Failed to load header:", error));
-
+fetch("/common/footer.html")
+    .then((res) => res.text())
+    .then((html) => {
+        document.getElementById("common-footer").innerHTML = html;
+    });
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile menu toggle functionality
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
+    // const mobileMenuButton = document.getElementById('mobile-menu-button');
 
-    if (mobileMenuButton && mobileMenu) {
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden'); // Toggle the 'hidden' class
-        });
+    // if (mobileMenuButton && mobileMenu) {
+    //     mobileMenuButton.addEventListener('click', () => {
+    //         mobileMenu.classList.toggle('hidden'); // Toggle the 'hidden' class
+    //     });
 
-        // Close mobile menu when a link is clicked
-        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden'); // Hide the menu
-            });
-        });
-    }
+    //     // Close mobile menu when a link is clicked
+    //     const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+    //     mobileMenuLinks.forEach(link => {
+    //         link.addEventListener('click', () => {
+    //             mobileMenu.classList.add('hidden'); // Hide the menu
+    //         });
+    //     });
+    // }
 
     // Basic form submission handling for the contact form (client-side only)
     const contactForm = document.getElementById('contact-form');
@@ -75,9 +78,27 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         })
         .catch(error => console.error("Failed to load blogs:", error));
-    fetch("footer.html")
-        .then((res) => res.text())
-        .then((html) => {
-            document.getElementById("common-footer").innerHTML = html;
+    setTimeout(() => {
+        console.log("Delayed message after 2 seconds.");
+        const toggleButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById('mobile-menu');
+        const isMenuOpen = () => mobileMenu.style.maxHeight && mobileMenu.style.maxHeight !== "0px";
+
+        toggleButton.addEventListener("click", () => {
+            console.log("clicked");
+
+            if (isMenuOpen()) {
+                mobileMenu.style.maxHeight = "0px";
+            } else {
+                mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
+            }
         });
+
+        // Optional: close menu when clicking a link
+        // mobileMenu.querySelectorAll("a").forEach(link => {
+        //     link.addEventListener("click", () => {
+        //         mobileMenu.style.maxHeight = "0px";
+        //     });
+        // });
+    }, 2000);
 });

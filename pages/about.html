@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - MINT MEDIA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Mint Media" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Styles for the alternating sections (reused from services.html logic) */
+        .about-detail-section {
+            @apply flex flex-col md:flex-row items-center justify-between gap-12 mb-20;
+            background-color: #ffffff;
+            /* White background for each section */
+            border-radius: 0.75rem;
+            /* rounded-xl */
+            padding: 2.5rem;
+            /* p-10 (approx) */
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            /* shadow-md */
+        }
+
+        /* Automatically reverse layout for every second section on medium screens and up */
+        .about-detail-section:nth-of-type(even) {
+            @apply md:flex-row-reverse;
+        }
+
+        /* Ensure images in content sections fill their space */
+        .content-image {
+            @apply w-full h-auto rounded-lg shadow-lg object-cover;
+            min-height: 250px;
+            /* Ensure images have a minimum height */
+            max-height: 400px;
+            /* Optional: Limit max height */
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-900 antialiased">
+
+    <div id="common-header"></div>
+
+    <main>
+        <section class="bg-gradient-to-r from-blue-700 to-purple-700 py-20 text-white text-center">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 class="text-5xl font-extrabold mb-4">About MINT MEDIA Marketing</h1>
+                <p class="text-xl opacity-90 max-w-3xl mx-auto">
+                    Driving brand growth through strategic social media marketing, content creation, and digital
+                    innovation.
+                </p>
+            </div>
+        </section>
+
+        <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-100">
+            <div class="container mx-auto max-w-5xl">
+
+                <!-- Who We Are -->
+                <div class="flex flex-col md:flex-row items-center justify-between gap-12 mb-20">
+                    <div class="md:w-1/2">
+                        <img src="https://placehold.co/600x400/93C5FD/ffffff?text=Our+Team" alt="MINT MEDIA Team"
+                            class="content-image">
+                    </div>
+                    <div class="md:w-1/2 text-center md:text-left">
+                        <h2 class="text-3xl font-semibold text-gray-900 mb-4">Who We Are</h2>
+                        <p class="text-gray-700 leading-relaxed text-lg mb-4">
+                            At <strong>MINT MEDIA Marketing</strong>, we are a team of passionate digital experts
+                            specializing in
+                            <strong>social media marketing, brand storytelling, and data-driven growth
+                                strategies</strong>. Since 2018,
+                            we’ve helped businesses of all sizes create meaningful connections with their audiences
+                            through tailored,
+                            high-impact marketing solutions.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed text-lg">
+                            Our diverse team brings together strategists, creatives, analysts, and innovators — all
+                            driven by a
+                            commitment to transparency, creativity, and long-term client success.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- How We Work -->
+                <div class="flex flex-col md:flex-row-reverse items-center justify-between gap-12 mb-20">
+                    <div class="md:w-1/2">
+                        <img src="https://placehold.co/600x400/BFDBFE/000000?text=Our+Process"
+                            alt="How MINT MEDIA Works" class="content-image">
+                    </div>
+                    <div class="md:w-1/2 text-left">
+                        <h2 class="text-3xl font-semibold text-gray-900 mb-4">How We Work</h2>
+                        <p class="text-gray-700 leading-relaxed text-lg mb-4">
+                            Our approach is strategic, agile, and results-focused. We collaborate with you to understand
+                            your brand
+                            identity, audience, and goals — then craft custom digital strategies that maximize ROI and
+                            online
+                            visibility.
+                        </p>
+                        <ul class="list-disc list-inside text-gray-600 text-left">
+                            <li><strong>Discovery & Strategy:</strong> Deep-dive research and roadmap development.</li>
+                            <li><strong>Creative Production:</strong> Engaging visuals, videos, and brand content
+                                creation.</li>
+                            <li><strong>Campaign Execution:</strong> Hands-on social media management and paid
+                                advertising.</li>
+                            <li><strong>Analytics & Optimization:</strong> Real-time tracking, reporting, and continuous
+                                improvement.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Vision & Mission -->
+                <div class="flex flex-col md:flex-row items-center justify-between gap-12 mb-20">
+                    <div class="md:w-1/2">
+                        <img src="https://placehold.co/600x400/BFB2FA/ffffff?text=Vision+Mission"
+                            alt="MINT MEDIA Vision and Mission" class="content-image">
+                    </div>
+                    <div class="md:w-1/2 text-center md:text-left">
+                        <h2 class="text-3xl font-semibold text-gray-900 mb-4">Our Vision & Mission</h2>
+                        <p class="text-gray-700 leading-relaxed text-lg mb-4">
+                            <strong>Our Vision:</strong> To be a global leader in creative and performance-focused
+                            digital marketing,
+                            known for delivering impactful strategies that elevate brands and build digital-first
+                            communities.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed text-lg">
+                            <strong>Our Mission:</strong> To empower businesses by providing personalized, strategic,
+                            and
+                            results-driven <strong>social media solutions</strong> that foster authentic engagement,
+                            drive growth, and
+                            spark lasting brand loyalty.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Future Plans -->
+                <div class="flex flex-col md:flex-row-reverse items-center justify-between gap-12 mb-20">
+                    <div class="md:w-1/2">
+                        <img src="https://placehold.co/600x400/A0DAFB/000000?text=Future+Growth"
+                            alt="Future Plans for MINT MEDIA" class="content-image">
+                    </div>
+                    <div class="md:w-1/2 text-center md:text-right">
+                        <h2 class="text-3xl font-semibold text-gray-900 mb-4">Our Future Plans</h2>
+                        <p class="text-gray-700 leading-relaxed text-lg mb-4">
+                            As digital marketing evolves, so do we. We're exploring the future of content through
+                            <strong> AI-powered insights,
+                                influencer partnerships, short-form video marketing</strong>, and immersive experiences
+                            like AR/VR.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed text-lg">
+                            Our roadmap includes global expansion, strategic collaborations, and continued innovation —
+                            all aimed at
+                            delivering the next generation of high-impact social media strategies.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="text-center mt-16">
+                    <p class="text-xl text-gray-800 mb-6">Want to partner with us or learn more?</p>
+                    <a href="index.html#contact" class="btn-primary">Connect with Us</a>
+                </div>
+            </div>
+        </section>
+        <div id="common-footer"></div>
+    </main>
+
+    <script>
+        // Load common header
+        fetch("/common/header.html")
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById("common-header").innerHTML = html;
+            })
+            .catch(error => console.error("Failed to load header:", error));
+
+        fetch("/common/footer.html")
+            .then((res) => res.text())
+            .then((html) => {
+                document.getElementById("common-footer").innerHTML = html;
+            });
+    </script>
+</body>
+
+</html>
