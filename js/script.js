@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <div class="p-6 text-left">
                                 <h3 class="text-xl font-semibold text-gray-900 mb-2">${blog.title}</h3>
                                 <p class="text-gray-600 text-sm mb-4">${blog.description}</p>
-                                <a href="blog.html?id=${blog.id}" class="text-blue-600 hover:text-blue-800 font-medium text-sm">Read More &rarr;</a>
+                                <a href="/pages/blog.html?id=${blog.id}" class="text-blue-600 hover:text-blue-800 font-medium text-sm">Read More &rarr;</a>
                             </div>
                         </div>`;
                     blogContainer.innerHTML += card;
